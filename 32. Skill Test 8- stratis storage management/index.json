@@ -6,6 +6,7 @@
         "steps": [
             {
                 "title": "Skill Test",
+                "courseData": "background.sh",
                 "text": "step1.md",
                 "answer": "step1-answer.md"
             }
