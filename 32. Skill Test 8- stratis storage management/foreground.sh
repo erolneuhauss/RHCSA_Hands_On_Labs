@@ -1,8 +1,7 @@
-#/bin/bash
-set -ex
+#!/bin/bash
+set -x
 
-truncate -s 10g /tmp/loop0.img
-losetup /dev/loop0 /tmp/loop0.img
-
-truncate -s 10g /tmp/loop1.img
-losetup /dev/loop1 /tmp/loop0.img
+for i in {0..5}; do
+  truncate -s 3g /tmp/loop${i}.img
+  losetup /dev/loop${i} /tmp/loop${i}.img
+done
