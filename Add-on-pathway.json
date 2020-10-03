@@ -1,0 +1,12 @@
+{
+    "title": "RHCSA Additional Skill Tests",
+    "icon": "fa-redhat",
+    "description": "Additional Skill Tests created to test the knowledge necessary to pass the RHCSA certification exam",
+    "courses": [
+      {
+        "course_id": "Skill Test 1- stratis storage management",
+        "title": "Skill Test 1- stratis storage management",
+        "description": ""
+      },
+    ]
+}
