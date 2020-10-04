@@ -5,11 +5,6 @@
     "details": {
         "steps": [
             {
-                "title": "Intro",
-                "courseData": "background.sh",
-                "text": "step0.md"
-            },
-            {
                 "title": "Skill Test",
                 "code": "step1-foreground.sh",
                 "text": "step1.md",
