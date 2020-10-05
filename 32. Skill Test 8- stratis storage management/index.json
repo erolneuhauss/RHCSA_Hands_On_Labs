@@ -21,7 +21,7 @@
         "assets": {
             "host01":
             [
-                {"file": "verify-step1.sh", "target": "/tmp", "chmod": "+x"}
+                {"file": "verify-step1.sh", "target": "/tmp", "chmod": "+x"},
                 {"file": "verify-step2.sh", "target": "/tmp", "chmod": "+x"}
             ]
         }
