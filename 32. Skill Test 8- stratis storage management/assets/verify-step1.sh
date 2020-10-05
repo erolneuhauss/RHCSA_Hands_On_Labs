@@ -56,7 +56,7 @@ FSTAB="$( grep -qP '^UUID.+xfs.+defaults,x-systemd.requires=stratisd.service.+0.
 comparison "${FSTAB}" "0" "9"
 FILE=$( [ -f /mnt/fs1/very_important_file ] && echo $? )
 comparison "${FILE}" "0" "10"
-SNAP=$( stratis filesystem | grep -q fs1-snapshot && echo $? )
+SNAP=$( stratis filesystem | grep -q fs1_snapshot && echo $? )
 comparison "${SNAP}" "0" "10"
 
 print_color "green" "You Freaking Rock "
