@@ -50,7 +50,7 @@ FS1_EXISTS="$( stratis filesystem list | grep -o '/stratis/pool0/stratis_fs1' )"
 comparison "${FS1_EXISTS}" "/stratis/pool0/stratis_fs1" "6"
 FS2_EXISTS="$( stratis filesystem list | grep -o '/stratis/pool0/stratis_fs2' )"
 comparison "${FS2_EXISTS}" "/stratis/pool0/stratis_fs2" "7"
-MOUNT=$( mount | grep stratis_f | wc -l)
+MOUNT=$( mount | grep stratis | wc -l)
 comparison "${MOUNT}" "2" "8"
 FSTAB="$( grep -qP '^UUID.+xfs.+defaults,x-systemd.requires=stratisd.service.+0.+0$' /etc/fstab && echo $? )"
 comparison "${FSTAB}" "0" "9"
