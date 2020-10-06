@@ -38,17 +38,17 @@ function comparison(){
 #
 RPMCHECK=$( rpm -qa | grep stratis | wc -l )
 comparison ${RPMCHECK} "2" "1"
-ENABLED="$( systemctl status stratisd | grep -o 'service; enabled' )"
-comparison "${ENABLED}" 'service; enabled' "2"
-ACTIVE_RUNNING="$( systemctl status stratisd | grep -o 'Active: active (running)' )"
-comparison "${ACTIVE_RUNNING}" "Active: active (running)" "3"
+ENABLED="$( systemctl is-enable stratisd )"
+comparison "${ENABLED}" 'enabled' "2"
+ACTIVE_RUNNING="$( systemctl is-active stratisd )"
+comparison "${ACTIVE_RUNNING}" "active" "3"
 POOL_EXISTS="$( stratis pool | grep -o 'pool0' )"
 comparison "${POOL_EXISTS}" "pool0" "4"
 DEV_EXISTS="$( stratis blockdev list | grep -o -P 'loop[01]' | wc -l )"
 comparison "${DEV_EXISTS}" "2" "5"
 FS1_EXISTS="$( stratis filesystem list | grep -o '/stratis/pool0/stratis_fs1' )"
 comparison "${FS1_EXISTS}" "/stratis/pool0/stratis_fs1" "6"
-FS2_EXISTS="$( stratis filesystem list | grep -o '/stratis/pool0/stratis_fs1' )"
+FS2_EXISTS="$( stratis filesystem list | grep -o '/stratis/pool0/stratis_fs2' )"
 comparison "${FS2_EXISTS}" "/stratis/pool0/stratis_fs2" "7"
 MOUNT=$( mount | grep stratis_f | wc -l)
 comparison "${MOUNT}" "2" "8"
