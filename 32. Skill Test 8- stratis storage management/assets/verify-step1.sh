@@ -57,6 +57,6 @@ comparison "${FSTAB}" "0" "9"
 FILE=$( [ -f /mnt/fs1/very_important_file ] && echo $? )
 comparison "${FILE}" "0" "10"
 SNAP=$( stratis filesystem | grep -q fs1_snapshot && echo $? )
-comparison "${SNAP}" "0" "10"
+comparison "${SNAP}" "0" "11"
 
 print_color "green" "You Freaking Rock "
