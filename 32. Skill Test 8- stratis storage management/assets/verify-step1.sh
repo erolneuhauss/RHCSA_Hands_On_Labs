@@ -38,7 +38,7 @@ function comparison(){
 #
 RPMCHECK=$( rpm -qa | grep stratis | wc -l )
 comparison ${RPMCHECK} "2" "1"
-ENABLED="$( systemctl is-enable stratisd )"
+ENABLED="$( systemctl is-enabled stratisd )"
 comparison "${ENABLED}" 'enabled' "2"
 ACTIVE_RUNNING="$( systemctl is-active stratisd )"
 comparison "${ACTIVE_RUNNING}" "active" "3"
