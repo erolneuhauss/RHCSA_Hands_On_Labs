@@ -111,11 +111,6 @@ GOWN=$( ls -l / | awk '/data/ {print $4}' )
 comparison $GOWN sysadmin "8- Group ownership"
 
 #
-##Objective 9
-
-comparison 1 1 "9 LDAP self-checked"
-
-#
 ##Objective 10
 
 NTP=$( grep "station.district.example.com" /etc/chrony.conf | awk '{print $1} ' )
@@ -133,7 +128,7 @@ YUM1=$( grep "http://district.example.com/repo/errata" -r /etc/yum.repos.d | awk
 comparison $YUM1 "http://district.example.com/repo/errata" "12- YUM"
 
 DEFIND=$( grubby --default-index )
-KERNEL=$( grubby --inf
+KERNEL=$( grubby --info=ALL )
 comparison 2 "2" "12-Kernel" 
 
 #
