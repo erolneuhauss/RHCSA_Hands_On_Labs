@@ -19,16 +19,6 @@ copy `/etc/fstab` to `/var/tmp/fstab`. The user and group owner of that file sho
 
 Secure `/data` such that `only` group `sysadmin` can access it. Group owner should be `sysadmin` & all child directories and files by default should have `group sysadmin permissions`. 
 
-## Objective 9
-
-vim the full authconfig command you would run in `/root/authconfig.test` for the following requirements
-Configure an ldap client, where your ldap server is `station.district.example.com`, LDAP Base DN: `dc=station,dc=district,dc=example,dc=com`. Authenticate your ldap server using the certificate `https://classroom.example.com/pub/example-ca.crt`
-
->>Q1 what command do you need to run to utilize the GUI version of setting up LDAP?<<
-=== authconfig-gtk
-
-Run the following command to verify if the what you wrote is correct `file1=$(cat /root/authconfig.test); file2=$(cat /tmp/authconfig.verify) ; [[ $file1 == $file2 ]] && echo "Awesome Job" || echo "Open up /tmp/authconfig.verify to see what you might have missed."`{{execute}}
-
 ## Objective 10
 
 Configure your NTP server to synchronize with `station.district.example.com`
