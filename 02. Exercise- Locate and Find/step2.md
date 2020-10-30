@@ -4,7 +4,7 @@ Notice how it fails. This is because we need to run a command to update the cach
 <pre> `updatedb`{{execute}} </pre>
 Now try again:
 >>Q1: where does the motd file reside on the system? <<
-(*) etc/motd
+(*) /etc/motd
 ( ) /home/motd
 ( ) /user/bin/motd
 ( ) /tmp/motd
